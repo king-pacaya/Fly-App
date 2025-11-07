@@ -1,10 +1,10 @@
 import { GoogleGenAI, Modality } from '@google/genai';
 
 const getAiClient = () => {
-  if (!process.env.VITE_API_KEY) {
+  if (!import.meta.env.VITE_API_KEY) {
     throw new Error("API_KEY no está configurada. Asegúrate de que la variable de entorno API_KEY esté disponible.");
   }
-  return new GoogleGenAI({ apiKey: process.env.VITE_API_KEY });
+  return new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
 };
 
 export const generateAdContent = async (
