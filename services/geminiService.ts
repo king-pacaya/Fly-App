@@ -4,7 +4,7 @@ const getAiClient = () => {
   if (!process.env.API_KEY) {
     throw new Error("API_KEY no está configurada. Asegúrate de que la variable de entorno API_KEY esté disponible.");
   }
-  return new GoogleGenAI({ apiKey: AIzaSyDZHpV-KDuV_sKOAvsKlVuHWqFA37MFD9Q });
+  return new GoogleGenAI({ apiKey: process.env.API_KEY });
 };
 
 export const generateAdContent = async (
